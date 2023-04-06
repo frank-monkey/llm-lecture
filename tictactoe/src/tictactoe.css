@@ -1,0 +1,49 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 180px;
+}
+
+button {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:focus {
+  outline: none;
+}
+
+.board::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: calc(100% + 16px);
+  top: -8px;
+  left: 50%;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+.board button:nth-child(3n + 1)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: calc(100% + 16px);
+  height: 2px;
+  bottom: -8px;
+  left: -8px;
+  background-color: #000;
+}
