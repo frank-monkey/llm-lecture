@@ -52,6 +52,14 @@ class TicTacToe extends Component {
     return null;
   }
 
+  handleReset() {
+    this.setState({
+      board: Array(9).fill(null),
+      currentPlayer: 'X',
+      winner: null,
+    });
+  }
+
   render() {
     const { board, currentPlayer, winner } = this.state;
 
@@ -66,6 +74,7 @@ class TicTacToe extends Component {
             </button>
           ))}
         </div>
+        <button onClick={() => this.handleReset()}>Reset</button>
       </div>
     );
   }
