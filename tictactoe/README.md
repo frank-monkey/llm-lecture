@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# TicTacToe Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React component called `TicTacToe` that represents a Tic-Tac-Toe game board. It has the following features:
 
-## Available Scripts
+## Props
+- `props`: The component accepts `props` as its constructor parameter, which is passed from its parent component.
 
-In the project directory, you can run:
+## State
+- `board`: An array of length 9 that represents the game board. It is initialized with `null` values and gets updated with 'X' or 'O' depending on the player's moves.
+- `currentPlayer`: A string that represents the current player. It can be either 'X' or 'O' and gets updated after each player's move.
+- `winner`: A string that represents the winner of the game. It is initially set to `null` and gets updated with the winning player's mark ('X' or 'O') if there is a winner, otherwise remains `null`.
 
-### `npm start`
+## Methods
+- `handleClick(index)`: This method is called when a cell on the game board is clicked. It takes an `index` parameter representing the index of the cell that was clicked. It checks if the cell is already occupied or if the game is over (i.e., there is a winner), and if not, updates the board with the current player's mark ('X' or 'O'), checks for a winner, and updates the state with the new board, current player, and winner.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `checkWinner(board)`: This method takes the current board as a parameter and checks for a winner based on the winning combinations of Tic-Tac-Toe. It returns the winning player's mark ('X' or 'O') if there is a winner, otherwise returns `null`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `handleReset()`: This method is called when the "Reset" button is clicked. It resets the game board, current player, and winner to their initial values.
 
-### `npm test`
+## Render
+- The `render()` method returns the JSX that represents the structure of the Tic-Tac-Toe game. It displays the current player, winner, game board with buttons representing each cell, and a "Reset" button. It also attaches event handlers (`onClick`) to the buttons to call the appropriate methods when clicked.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Export
+- The `TicTacToe` component is exported as the default export, which means it can be imported and used in other parts of the application using `import TicTacToe from './TicTacToe'`.
